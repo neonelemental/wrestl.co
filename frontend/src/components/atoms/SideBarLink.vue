@@ -45,7 +45,7 @@
   }
 
   .side-bar-link {
-    font-family: $brand-font;
+    font-family: $body-font;
     border-radius: $border-radius;
     position: relative;
     display: flex;

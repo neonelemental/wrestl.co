@@ -39,7 +39,7 @@ export default {
           this.$emit('input', this.promises.length > 1 ? values : values[0]);
         })
         .catch(error => {
-          console.error(error)
+          console.error(`Promiseable encountered an error: ${error}`)
           this.error = true
         })
         .finally(() => this.resolving = false)
