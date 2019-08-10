@@ -2,7 +2,7 @@ import Api from './Api';
 
 export default class SearchApi extends Api {
   search = (searchQuery) => {
-    return this.spoofResponse({
+    return this._spoofResponse({
       'People': [
         {
           text: 'Vince McMahon',

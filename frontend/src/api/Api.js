@@ -5,7 +5,29 @@ export default class Api {
     })
   };
 
-  spoofResponse = (responseBody, crazyMonkey = false) => {
+  _request = (uri, params = {}, options = {}) => {
+    return fetch(this._buildUrl(uri, params), options)
+      .then(response => response.json())
+      .then(json => this._handleStatus(json))
+  };
+
+  _buildUrl = (uri, params = {}) => {
+    let queryString = Object.keys(params).map(key => key + '=' + params[key]).join('&');
+    return `/api/v1${uri}${queryString.length ? '?' : ''}${queryString}`;
+  };
+
+  _handleStatus = (responseJson) => {
+    switch (responseJson.status) {
+      case 500:
+        throw new Error(responseJson.exception);
+      case 404:
+        throw new Error(responseJson.exception);
+      default:
+        return responseJson;
+    }
+  };
+
+  _spoofResponse = (responseBody, crazyMonkey = false) => {
     return new Promise(async (resolve, reject) => {
       await this._delay()
       if(crazyMonkey && Math.random() >= 1) {
@@ -15,25 +37,11 @@ export default class Api {
       else resolve(responseBody)
     })
   };
-
   _delay = () => {
     return new Promise( resolve => {
       setTimeout(() => {
         resolve()
       }, 1000)
     })
-  };
-
-  _request = (uri, params = {}, options = {}) => {
-    return fetch(this._buildUrl(uri, params), options)
-      .then(response => {
-        if(!response.ok)
-          throw new Error(response.responseText)
-      })
-  };
-
-  _buildUrl = (uri, params = {}) => {
-    let queryString = Object.keys(params).map(key => key + '=' + params[key]).join('&');
-    return `api${uri}${queryString.length ? '?' : ''}${queryString}`;
   };
 }
