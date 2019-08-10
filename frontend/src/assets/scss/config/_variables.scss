@@ -1,0 +1,22 @@
+$border-radius: .125rem;
+$black: #131619;
+$electric-pink: #f62681;
+
+$navbar-height: calc(3rem + 16px);
+$warning: orange;
+
+
+$neon-blue: #182474;
+$light-neon-blue: lighten($neon-blue, 45%);
+$dark-neon-blue: darken($neon-blue, 28%);
+$primary:   lighten($neon-blue, 3%);
+$primary-1: $neon-blue;
+$primary-2: darken($neon-blue, 3%);
+$primary-3: darken($neon-blue, 9%);
+$primary-4: darken($neon-blue, 18%);
+$primary-5: darken($neon-blue, 24%);
+$white: lighten($neon-blue, 66%);
+$text-color: $white;
+
+$brand-font: 'PollyRounded-Regular';
+$danger: #da0356;

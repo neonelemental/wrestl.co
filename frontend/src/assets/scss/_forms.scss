@@ -1,0 +1,12 @@
+input
+{
+  font-family: $brand-font !important;
+  &:-ms-input-placeholder,
+  &::placeholder,
+  &::-moz-placeholder,
+  &::-webkit-input-placeholder {
+    font-family: $brand-font;
+    color: lighten($neon-blue, 9%);
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,7 @@
+@mixin center($top) {
+  position: absolute;
+  left: 50%;
+  top: $top;
+  text-align: center;
+  transform: translateY(-100%) translateX(-50%);
+}

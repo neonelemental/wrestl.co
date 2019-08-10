@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Mono&display=swap');
+$body-font: 'PT Mono', monospace;
+
+@font-face {
+  font-family: $brand-font;
+  src:  url('~@/assets/fonts/PollyRounded-Regular.otf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+.brand-font {
+  font-family: $brand-font;
+  line-height: 1rem;
+}
+
+h1 {
+  font-size: 1.75rem !important;
+}
+
+h4 {
+  @extend .brand-font;
+  font-size: 1.25rem;
+}

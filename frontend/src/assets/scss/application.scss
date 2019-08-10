@@ -1,0 +1,44 @@
+@import '@scss/config.scss';
+@import './_forms.scss';
+
+*:not(svg), svg.animated {
+  transition: all ease-in-out 225ms;
+}
+
+main {
+  font-family: $body-font;
+  position: relative;
+
+  .notification {
+    z-index: 1;
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+  }
+
+  > .container-fluid {
+    padding: 1.5rem;
+    padding-bottom: 0;
+
+    > .row {
+      margin: 0;
+      padding: 0;
+
+      > div {
+        padding: 0;
+        margin: 0;
+      }
+    }
+  }
+
+  a,
+  button {
+    &:hover {
+      cursor: pointer;
+    }
+
+    &[disabled="disabled"] {
+      cursor: no-drop;
+    }
+  }
+}
